@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reservation_id: 
+  resource_id: 
+
+two:
+  reservation_id: 
+  resource_id: 

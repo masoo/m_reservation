@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160806053313) do
+ActiveRecord::Schema.define(version: 20160806143717) do
+
+  create_table "m_reservation_assignments", force: :cascade do |t|
+    t.integer  "reservation_id"
+    t.integer  "resource_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "m_reservation_assignments", ["reservation_id"], name: "index_m_reservation_assignments_on_reservation_id"
+  add_index "m_reservation_assignments", ["resource_id"], name: "index_m_reservation_assignments_on_resource_id"
 
   create_table "m_reservation_reservations", force: :cascade do |t|
     t.datetime "started_at"
