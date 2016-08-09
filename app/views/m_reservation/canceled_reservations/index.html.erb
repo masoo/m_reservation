@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Canceled Reservations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Started at</th>
+      <th>Ended at</th>
+      <th>Cancel at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @canceled_reservations.each do |canceled_reservation| %>
+      <tr>
+        <td><%= canceled_reservation.started_at %></td>
+        <td><%= canceled_reservation.ended_at %></td>
+        <td><%= canceled_reservation.cancel_at %></td>
+        <td><%= link_to 'Show', canceled_reservation %></td>
+        <td><%= link_to 'Edit', edit_canceled_reservation_path(canceled_reservation) %></td>
+        <td><%= link_to 'Destroy', canceled_reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Canceled reservation', new_canceled_reservation_path %>

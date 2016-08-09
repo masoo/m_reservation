@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Started at:</strong>
+  <%= @canceled_reservation.started_at %>
+</p>
+
+<p>
+  <strong>Ended at:</strong>
+  <%= @canceled_reservation.ended_at %>
+</p>
+
+<p>
+  <strong>Cancel at:</strong>
+  <%= @canceled_reservation.cancel_at %>
+</p>
+
+<%= link_to 'Edit', edit_canceled_reservation_path(@canceled_reservation) %> |
+<%= link_to 'Back', canceled_reservations_path %>

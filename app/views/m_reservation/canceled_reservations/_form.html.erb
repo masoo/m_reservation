@@ -1,0 +1,29 @@
+<%= form_for(@canceled_reservation) do |f| %>
+  <% if @canceled_reservation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@canceled_reservation.errors.count, "error") %> prohibited this canceled_reservation from being saved:</h2>
+
+      <ul>
+      <% @canceled_reservation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :started_at %><br>
+    <%= f.datetime_select :started_at %>
+  </div>
+  <div class="field">
+    <%= f.label :ended_at %><br>
+    <%= f.datetime_select :ended_at %>
+  </div>
+  <div class="field">
+    <%= f.label :cancel_at %><br>
+    <%= f.datetime_select :cancel_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
