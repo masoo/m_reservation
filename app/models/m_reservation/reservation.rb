@@ -7,16 +7,16 @@ module MReservation
     # @param [TimeWithZone] specified time
     # @return [true] It is included in the range.
     # @return [false] It is not included in the range.
-    def include?(time_zone)
-      (started_at <= time_zone) and (time_zone <= ended_at)
+    def cover?(time_zone)
+      (started_at..ended_at).cover?(time_zone)
     end
 
     # It isn't in the range of the specified time.
     # @param [TimeWithZone] specified time
     # @return [true] It is not included in the range.
     # @return [false] It is included in the range.
-    def exclude?(time_zone)
-      !(include?(time_zone))
+    def uncover?(time_zone)
+      !(cover?(time_zone))
     end
   end
 end
